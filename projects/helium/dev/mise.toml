@@ -1,0 +1,9 @@
+[env]
+CLUSTER_NAME = "helium-dev"
+
+[hooks]
+enter = """
+if [ -n "$CLUSTER_NAME" ] && kubectl config get-contexts "$CLUSTER_NAME" &>/dev/null; then
+  kubectl config use-context "$CLUSTER_NAME"
+fi
+"""

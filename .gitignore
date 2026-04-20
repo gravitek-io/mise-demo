@@ -1,0 +1,26 @@
+# Kubernetes
+kubeconfig
+
+# Secrets & credentials
+*.pem
+*.key
+.env
+.env.*
+
+# Maven
+**/target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code (local settings)
+.claude/settings.local.json

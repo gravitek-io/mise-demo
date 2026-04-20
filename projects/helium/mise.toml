@@ -1,0 +1,25 @@
+[settings]
+env_shell_expand = true
+
+[env]
+PROJECT_NAME = "helium-new"
+OVH_ENDPOINT="ovh-eu"
+OS_AUTH_URL="https://auth.cloud.ovh.net/v3/"
+TF_VAR_project_name="${PROJECT_NAME}"
+# Sources d'autres fichiers d'environnement
+_.source = ".envrc"
+
+[tools]
+java = "temurin-25"
+python = "3.14"
+# Le reste dans .tools-version pour la démo
+
+[hooks]
+enter = """
+echo "👋 Coucou Devoxxfr 🚀"
+echo '🎉 [MISE] Environnement HELIUM détecté (New Stack).'
+"""
+
+[tasks.start]
+description = "Simuler le démarrage d'un microservice Quarkus"
+run = "echo '☕ [Quarkus] Démarrage de helium-new avec Java {{tools.java}}...' && sleep 1 && echo '🚀 Prêt sur http://localhost:8080'"

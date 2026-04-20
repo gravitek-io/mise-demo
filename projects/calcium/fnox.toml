@@ -1,0 +1,26 @@
+[providers.vault-ovh-project-api-demo]
+type = "vault"
+address = "http://127.0.0.1:8200"
+path = "secret/myorg/ovh/calcium"
+
+[providers.vault-ovh-project-openstack-demo]
+type = "vault"
+address = "http://127.0.0.1:8200"
+path = "secret/myorg/ovh/calcium/openstack"
+
+[providers.vault-rancher-demo]
+type = "vault"
+address = "http://127.0.0.1:8200"
+path = "secret/myorg/rancher"
+
+[secrets]
+OVH_APPLICATION_KEY = { provider = "vault-ovh-project-api-demo", value = "API_CREDENTIALS/OVH_APPLICATION_KEY" }
+OVH_APPLICATION_SECRET = { provider = "vault-ovh-project-api-demo", value = "API_CREDENTIALS/OVH_APPLICATION_SECRET" }
+OVH_CLOUD_PROJECT_SERVICE = { provider = "vault-ovh-project-api-demo", value = "API_CREDENTIALS/OVH_CLOUD_PROJECT_SERVICE" }
+OVH_CONSUMER_KEY = { provider = "vault-ovh-project-api-demo", value = "API_CREDENTIALS/OVH_CONSUMER_KEY" }
+
+OS_TENANT_NAME = { provider = "vault-ovh-project-openstack-demo", value = "admin/OS_TENANT_NAME" }
+OS_USERNAME = { provider = "vault-ovh-project-openstack-demo", value = "admin/OS_USERNAME" }
+OS_PASSWORD = { provider = "vault-ovh-project-openstack-demo", value = "admin/OS_PASSWORD" }
+
+RANCHER_ACCESS_KEY = { provider = "vault-rancher-demo", value = "admin/ACCESS_KEY" }

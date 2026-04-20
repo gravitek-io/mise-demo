@@ -1,0 +1,24 @@
+[settings]
+env_shell_expand = true
+
+[env]
+PROJECT_NAME = "calcium-secure"
+OVH_ENDPOINT="ovh-eu"
+OS_AUTH_URL="https://auth.cloud.ovh.net/v3/"
+TF_VAR_project_name="${PROJECT_NAME}"
+# Sources d'autres fichiers d'environnement
+_.source = ".envrc"
+
+# fnox
+_.fnox-env = { tools = true }
+
+[plugins]
+fnox-env = "https://github.com/jdx/mise-env-fnox"
+
+[tools]
+java = "temurin-25"
+python = "3.14"
+# Le reste dans .tools-version pour la démo
+
+[hooks]
+enter = "echo '🔑 [MISE] Environnement CALCIUM détecté (Secure Stack).'"

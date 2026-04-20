@@ -1,0 +1,4 @@
+kubectl 1.35.4
+helm 4.1.4
+terraform 1.14.8
+fnox latest

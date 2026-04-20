@@ -1,0 +1,40 @@
+[tools]
+java = "temurin-25"
+maven = "3.9"
+
+[env]
+QUARKUS_HTTP_PORT = "8080"
+
+[tasks.install]
+description = "Installer les dependances Maven"
+run = "mvn dependency:resolve -q"
+
+[tasks.build]
+description = "Compiler le projet Quarkus"
+depends = ["install"]
+run = "mvn package -DskipTests -q"
+
+[tasks.test]
+description = "Lancer les tests"
+run = "mvn test"
+
+[tasks.lint]
+description = "Verifier le style du code"
+run = "mvn compile -q && echo '✅ Compilation OK, pas d erreur de style.'"
+
+[tasks.check]
+description = "Verification syntaxe et validation du projet"
+run = "mvn validate -q && echo '✅ Projet valide.'"
+
+[tasks.dev]
+description = "Lancer Quarkus en mode developpement (hot-reload)"
+run = "mvn quarkus:dev"
+
+[tasks.start]
+description = "Demarrer l application Quarkus"
+depends = ["build"]
+run = "java -jar target/quarkus-app/quarkus-run.jar"
+
+[tasks.clean]
+description = "Nettoyer les artefacts de build"
+run = "mvn clean -q && echo '🧹 Nettoyage termine.'"

@@ -1,0 +1,56 @@
+[tasks.setup]
+description = "Monter l'environnement de demo"
+run = "bash setup.sh"
+dir = "{{cwd}}"
+
+[tasks.teardown]
+description = "Démonter l'environnement de demo"
+run = "bash teardown.sh"
+dir = "{{cwd}}"
+
+[tasks."demo-01"]
+description = "Demo: Gestion des versions"
+raw = true
+run = "bash scripts/01-versions.sh"
+
+[tasks."demo-02"]
+description = "Demo: Tasks"
+raw = true
+run = "bash scripts/02-tasks.sh"
+
+[tasks."demo-03"]
+description = "Demo: Variables d'environnement"
+raw = true
+run = "bash scripts/03-env.sh"
+
+[tasks."demo-04"]
+description = "Demo: Secrets fnox"
+raw = true
+run = "bash scripts/04-secrets.sh"
+
+[tools]
+java = "temurin-17"
+python = "3.11"
+vault = "latest"
+fnox = "latest"
+
+[env]
+KUBECONFIG = ""
+VAULT_ADDR = "http://127.0.0.1:8200"
+# Default
+VAULT_TOKEN = "devoxxfr"
+
+OVH_APPLICATION_KEY = "devoxxfr"
+OVH_APPLICATION_SECRET = "devoxxfr"
+OVH_CLOUD_PROJECT_SERVICE = "devoxxfr"
+OVH_CONSUMER_KEY = "devoxxfr"
+
+OS_TENANT_NAME = "devoxxfr"
+OS_USERNAME = "devoxxfr"
+OS_PASSWORD = "devoxxfr"
+
+AWS_ACCESS_KEY_ID = "devoxxfr"
+AWS_SECRET_ACCESS_KEY = "devoxxfr"
+
+ACCESS_KEY = "devoxxfr"
+SECRET_KEY = "devoxxfr"

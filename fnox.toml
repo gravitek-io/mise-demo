@@ -1,0 +1,8 @@
+default_provider = "keychain-demo"
+
+[providers.keychain-demo]
+type = "keychain"
+service = "fnox-demo"
+
+[secrets]
+VAULT_TOKEN= { provider = "keychain-demo", value = "VAULT_TOKEN" }

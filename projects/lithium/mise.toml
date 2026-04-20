@@ -1,0 +1,22 @@
+[settings]
+env_shell_expand = true
+
+[env]
+PROJECT_NAME = "lithium-legacy"
+OVH_ENDPOINT="ovh-eu"
+OS_AUTH_URL="https://auth.cloud.ovh.net/v3/"
+TF_VAR_project_name="${PROJECT_NAME}"
+# Sources d'autres fichiers d'environnement
+_.source = ".envrc"
+
+[tools]
+java = "temurin-17"
+python = "3.11"
+# Le reste dans .tools-version pour la démo
+
+[hooks]
+enter = "echo '⚠️ [MISE] Environnement LITHIUM actif (Legacy Stack).'"
+
+[tasks.start]
+description = "Simuler le démarrage d'une appli springboot"
+run = "echo '🐢 [Springboot] Démarrage de lithium-legacy avec Springboot {{tools.java}}...' && sleep 1 && echo '🔥 Prêt sur http://localhost:8000'"
