@@ -6,7 +6,7 @@ DEMO_PROMPT="${GREEN}➜ ${CYAN}\W ${COLOR_RESET}"
 
 clear
 
-p "# Demo 04 : Secrets via fnox + Vault"
+echo "# Demo 04 : Secrets via fnox + Vault"
 
 pe "cd projects/calcium"
 
@@ -25,4 +25,4 @@ p "# Mêmes variables, valeurs par défaut pour lithium (fnox pas activé)"
 pe "echo \$OS_USERNAME"
 wait
 
-p "# Fin de la demo 04"
+echo "# Fin de la demo 04"

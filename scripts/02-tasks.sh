@@ -6,7 +6,7 @@ DEMO_PROMPT="${GREEN}➜ ${CYAN}\W ${COLOR_RESET}"
 
 clear
 
-p "# Demo 02 : Tasks avec mise"
+echo "# Demo 02 : Tasks avec mise"
 
 pe "cd projects/helium/dev/quarkus"
 cd "$DEMO_DIR/projects/helium/dev/quarkus"
@@ -21,4 +21,4 @@ wait
 
 pe "mise run test"
 
-p "# Fin de la demo 02"
+echo "# Fin de la demo 02"

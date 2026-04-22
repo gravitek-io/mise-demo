@@ -10,7 +10,7 @@ mise use python@3.11
 eval "$(mise hook-env -s bash 2>/dev/null)"
 clear
 
-p "# Demo 01 : Gestion des versions avec mise"
+echo "# Demo 01 : Gestion des versions avec mise"
 pe "grep '\[tools\]' -A5 mise.toml"
 wait
 
@@ -38,7 +38,7 @@ wait
 pe "mise registry | grep kubectl"
 wait
 
-p "# Fin de la demo 01"
+echo "# Fin de la demo 01"
 
 # Reset default legacy version
 mise use java@temurin-17

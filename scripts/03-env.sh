@@ -6,7 +6,7 @@ DEMO_PROMPT="${GREEN}➜ ${CYAN}\W ${COLOR_RESET}"
 
 clear
 
-p "# Demo 03 : Variables d'environnement automatiques"
+echo "# Demo 03 : Variables d'environnement automatiques"
 
 pe "cd projects/helium"
 
@@ -33,4 +33,4 @@ pe "kubectl config current-context"
 pe "echo \$PROJECT_NAME - \$CLUSTER_NAME - \$OS_REGION_NAME"
 wait
 
-p "# Fin de la demo 03"
+echo "# Fin de la demo 03"
