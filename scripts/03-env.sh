@@ -12,14 +12,14 @@ pe "cd projects/helium"
 
 pe "echo \$PROJECT_NAME - \$CLUSTER_NAME - \$OS_REGION_NAME"
 wait
-pe "grep '\[env\]' -A7 mise.toml"
+pe "grep '\[env\]' -A7 mise.toml | bat -pp --language=toml"
 pe "cat .envrc"
 
 pe "cd dev"
 
 pe "echo \$PROJECT_NAME - \$CLUSTER_NAME - \$OS_REGION_NAME"
 pe "kubectl config current-context"
-pe "grep '\[env\]' -A1 mise.toml"
+pe "grep '\[env\]' -A1 mise.toml | bat -pp --language=toml"
 wait
 
 pe "cd ../../lithium/prod"
@@ -31,7 +31,7 @@ wait
 pe "cd ../ansible"
 pe "which python"
 wait
-pe "grep '\[env\]' -A2 mise.toml"
+pe "grep '\[env\]' -A2 mise.toml | bat -pp --language=toml"
 
 rm -rf ".venv"
 echo "# Fin de la demo 03"

@@ -2,6 +2,7 @@
 DEMO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 eval "$(mise activate bash)"
 source "$DEMO_DIR/lib/demo-magic.sh"
+
 DEMO_PROMPT="${GREEN}➜ ${CYAN}\W ${COLOR_RESET}"
 
 # Set default legacy version
@@ -11,7 +12,7 @@ eval "$(mise hook-env -s bash 2>/dev/null)"
 clear
 
 echo "# Demo 01 : Gestion des versions avec mise"
-pe "grep '\[tools\]' -A5 mise.toml"
+pe "grep '\[tools\]' -A5 mise.toml | bat -pp --language=toml"
 wait
 
 pe "java --version"
@@ -26,7 +27,7 @@ eval "$(mise hook-env -s bash 2>/dev/null)"
 pe "kubectl version --client"
 wait
 
-pe "grep '\[tools\]' -A5 mise.toml"
+pe "grep '\[tools\]' -A5 mise.toml | bat -pp --language=toml"
 wait
 
 pe "mise list"

@@ -54,3 +54,6 @@ AWS_SECRET_ACCESS_KEY = "devoxxfr"
 
 ACCESS_KEY = "devoxxfr"
 SECRET_KEY = "devoxxfr"
+
+[shell_alias]
+tgrep = "grep $@ | bat --language=toml"
