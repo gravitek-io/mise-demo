@@ -6,7 +6,7 @@ DEMO_PROMPT="${GREEN}➜ ${CYAN}\W ${COLOR_RESET}"
 
 # Set default legacy version
 mise use java@temurin-17
-mise use python@3.11
+mise use kubectl@1.31
 eval "$(mise hook-env -s bash 2>/dev/null)"
 clear
 
@@ -15,15 +15,15 @@ pe "grep '\[tools\]' -A5 mise.toml"
 wait
 
 pe "java --version"
-pe "mise use java@temurin-25 --force"
+pe "mise use java@temurin-25"
 eval "$(mise hook-env -s bash 2>/dev/null)"
 pe "java --version"
 wait
 
-pe "python --version"
-pe "mise use python@3.14"
+pe "kubectl version --client"
+pe "mise use kubectl@1.35 --force"
 eval "$(mise hook-env -s bash 2>/dev/null)"
-pe "python --version"
+pe "kubectl version --client"
 wait
 
 pe "grep '\[tools\]' -A5 mise.toml"
@@ -35,11 +35,11 @@ wait
 pe "mise ls-remote java | egrep 'temurin.*LTS'"
 wait
 
-pe "mise registry | grep kubectl"
+pe "mise registry | egrep 'java|kubectl'"
 wait
 
 echo "# Fin de la demo 01"
 
 # Reset default legacy version
 mise use java@temurin-17
-mise use python@3.11
+mise use kubectl@1.31

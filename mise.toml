@@ -30,7 +30,7 @@ run = "bash scripts/04-secrets.sh"
 
 [tools]
 java = "temurin-17"
-python = "3.11"
+kubectl = "1.31"
 vault = "latest"
 fnox = "latest"
 

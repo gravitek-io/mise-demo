@@ -22,12 +22,7 @@ pe "kubectl config current-context"
 pe "grep '\[env\]' -A1 mise.toml"
 wait
 
-pe "cd ../../lithium/dev"
-
-pe "echo \$PROJECT_NAME - \$CLUSTER_NAME - \$OS_REGION_NAME"
-wait
-
-pe "cd ../prod"
+pe "cd ../../lithium/prod"
 pe "kubectl config current-context"
 
 pe "echo \$PROJECT_NAME - \$CLUSTER_NAME - \$OS_REGION_NAME"
