@@ -1,0 +1,20 @@
+[tools]
+python = "3.14"
+
+[env]
+_.python.venv = { path = ".venv", create = true, python = "3.14", uv_create_args = ['--seed'] }
+
+[tasks.install]
+description = "Installer les dépendances et les rôles Ansible"
+run = [
+  "uv pip install ansible ansible-lint python-gitlab",
+  "ansible-galaxy install -r roles/requirements.yml -p roles --force",
+]
+
+[tasks.lint]
+description = "Linter les playbooks Ansible"
+run = "ansible-lint"
+
+[tasks.check]
+description = "Exécuter tous les playbooks en mode check (dry-run)"
+run = "for f in *.yaml *.yml; do echo \"==> $f\"; ansible-playbook --check \"$f\"; done"

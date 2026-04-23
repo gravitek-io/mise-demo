@@ -6,7 +6,7 @@ DEMO_PROMPT="${GREEN}➜ ${CYAN}\W ${COLOR_RESET}"
 
 clear
 
-echo "# Demo 03 : Variables d'environnement automatiques"
+echo "# Demo 03 : Variables & Environnement automatiques"
 
 pe "cd projects/helium"
 
@@ -28,4 +28,10 @@ pe "kubectl config current-context"
 pe "echo \$PROJECT_NAME - \$CLUSTER_NAME - \$OS_REGION_NAME"
 wait
 
+pe "cd ../ansible"
+pe "which python"
+wait
+pe "grep '\[env\]' -A2 mise.toml"
+
+rm -rf ".venv"
 echo "# Fin de la demo 03"
