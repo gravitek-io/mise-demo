@@ -16,7 +16,7 @@ pe "java --version"
 pe "mise tasks --local"
 wait
 
-pe "cat mise.toml"
+pe "bat -pp mise.toml"
 wait
 
 pe "mise run test"
